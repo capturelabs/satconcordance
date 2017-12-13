@@ -4,6 +4,16 @@
 #'
 #' @param x numeric vector of new SAT writing and language section values
 #' @return integer vector of ACT Enlish/Writing test values
+#' @examples
+#' require(dplyr)
+#'
+#' new_sat_vals <- sample(17:40, 10)
+#' act_vals <- new_sat_writing_to_act_english(new_sat_vals)
+#' new_act_vals <- data.frame(new_sat_vals, act_vals)
+#' print(new_act_vals)
+#'
+#' new_act_vals %>%
+#'     mutate(act_vals_piped = new_sat_to_act(new_sat_vals))
 #' @export
 new_sat_writing_to_act_english <- function(x){
   require(dplyr)

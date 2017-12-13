@@ -16,3 +16,14 @@ integer vector of old SAT writing plus critical reading section values
 Function to recode new SAT Evidence-Based Reading and Writing Section test
 to old SAT writing plus critical reading sections
 }
+\examples{
+require(dplyr)
+
+new_sat_vals <- round(sample(200:800, 10), -1)
+old_sat_vals <- new_sat_ebrw_to_old_writingreading(new_sat_vals)
+new_old_vals <- data.frame(new_sat_vals, old_sat_vals)
+print(new_old_vals)
+
+new_old_vals \%>\%
+    mutate(old_sat_vals_piped = new_sat_ebrw_to_old_writingreading(new_sat_vals))
+}

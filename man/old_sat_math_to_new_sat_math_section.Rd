@@ -16,3 +16,14 @@ integer vector of new SAT math section values (200-800 scale)
 Function to recode old SAT math section to new SAT math section
 (200-800 scale)
 }
+\examples{
+require(dplyr)
+
+old_sat_vals <- round(sample(200:800, 10), -1)
+new_sat_vals <- old_sat_math_to_new_sat_math_section(old_sat_vals)
+old_new_vals <- data.frame(old_sat_vals, new_sat_vals)
+print(old_new_vals)
+
+old_new_vals \%>\%
+    mutate(new_sat_vals_piped = old_sat_math_to_new_sat_math_section(old_sat_vals))
+}

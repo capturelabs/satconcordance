@@ -2,7 +2,7 @@
 % Please edit documentation in R/old_sat_to_new_sat_1600.R
 \name{old_sat_to_new_sat_1600}
 \alias{old_sat_to_new_sat_1600}
-\title{Recode old SAT to new SAT (1600 scale)}
+\title{Recode old SAT (1600 scale) to new SAT (1600 scale)}
 \usage{
 old_sat_to_new_sat_1600(x)
 }
@@ -13,5 +13,16 @@ old_sat_to_new_sat_1600(x)
 integer vector of new SAT values on 1600 scale
 }
 \description{
-Function to recode old SAT to new SAT (1600 scale)
+Function to recode old SAT (1600 scale) to new SAT (1600 scale)
+}
+\examples{
+require(dplyr)
+
+old_sat_vals <- round(sample(400:1600, 10), -1)
+new_sat_vals <- old_sat_to_new_sat_1600(old_sat_vals)
+old_new_vals <- data.frame(old_sat_vals, new_sat_vals)
+print(old_new_vals)
+
+old_new_vals \%>\%
+    mutate(new_sat_vals_piped = old_sat_to_new_sat_1600(old_sat_vals))
 }

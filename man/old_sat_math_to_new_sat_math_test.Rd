@@ -15,3 +15,14 @@ integer vector of new SAT math test values (10-40 scale)
 \description{
 Function to recode old SAT math section to new SAT math test (10-40 scale)
 }
+\examples{
+require(dplyr)
+
+old_sat_vals <- round(sample(200:800, 10), -1)
+new_sat_vals <- old_sat_math_to_new_sat_math_test(old_sat_vals)
+old_new_vals <- data.frame(old_sat_vals, new_sat_vals)
+print(old_new_vals)
+
+old_new_vals \%>\%
+    mutate(new_sat_vals_piped = old_sat_math_to_new_sat_math_test(old_sat_vals))
+}

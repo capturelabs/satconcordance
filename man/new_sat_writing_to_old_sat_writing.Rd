@@ -15,3 +15,14 @@ integer vector of old SAT writing section values
 \description{
 Function to recode new SAT writing and language test to old SAT writing section
 }
+\examples{
+require(dplyr)
+
+new_sat_vals <- sample(10:40, 10)
+old_sat_vals <- new_sat_writing_to_old_sat_writing(new_sat_vals)
+new_old_vals <- data.frame(new_sat_vals, old_sat_vals)
+print(new_old_vals)
+
+new_old_vals \%>\%
+    mutate(old_sat_vals_piped = new_sat_writing_to_old_sat_writing(new_sat_vals))
+}

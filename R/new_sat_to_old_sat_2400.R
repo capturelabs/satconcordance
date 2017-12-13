@@ -1,9 +1,19 @@
-#' Recode new SAT to old SAT (2400 scale)
+#' Recode new SAT (1600 scale) to old SAT (2400 scale)
 #'
-#' Function to recode new SAT to old SAT (2400 Scale)
+#' Function to recode new SAT (1600 scale) to old SAT (2400 Scale)
 #'
-#' @param x numeric vector of new SAT values on 2400 scale
+#' @param x numeric vector of new SAT values on 1600 scale
 #' @return integer vector of old SAT values on 2400 scale
+#' @examples
+#' require(dplyr)
+#'
+#' new_sat_vals <- round(sample(400:1600, 10), -1)
+#' old_sat_vals <- new_sat_to_old_sat_2400(new_sat_vals)
+#' new_old_vals <- data.frame(new_sat_vals, old_sat_vals)
+#' print(new_old_vals)
+#'
+#' new_old_vals %>%
+#'     mutate(old_sat_vals_piped = new_sat_to_old_sat_2400(new_sat_vals))
 #' @export
 new_sat_to_old_sat_2400 <- function(x){
   require(dplyr)

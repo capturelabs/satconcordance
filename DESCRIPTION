@@ -6,7 +6,9 @@ Author: Pete Barwis
 Maintainer: Pete Barwis <pbarwis@capturehighered.com>
 Description: Provides functions to recode new SAT to old SAT values,
     old SAT to new SAT values, new SAT to ACT values, and ACT
-    to new SAT values.
+    to new SAT values. Functions use dplyr::recode(). Each function 
+    accepts a vector of values, recodes it, and returns the recoded
+    vector.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true

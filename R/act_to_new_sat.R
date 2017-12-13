@@ -4,6 +4,16 @@
 #'
 #' @param x numeric vector of ACT values
 #' @return integer vector of new SAT values (1600 scale)
+#' @examples
+#' require(dplyr)
+#'
+#' act_vals <- sample(11:36, 10)
+#' new_sat_vals <- act_to_new_sat(act_vals)
+#' act_new_vals <- data.frame(act_vals, new_sat_vals)
+#' print(act_new_vals)
+#'
+#' act_new_vals %>%
+#'     mutate(new_sat_vals_piped = act_to_new_sat(act_vals))
 #' @export
 act_to_new_sat <- function(x){
   require(dplyr)

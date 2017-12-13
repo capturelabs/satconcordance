@@ -2,7 +2,7 @@
 % Please edit documentation in R/old_sat_to_new_sat_2400.R
 \name{old_sat_to_new_sat_2400}
 \alias{old_sat_to_new_sat_2400}
-\title{Recode old SAT to new SAT (2400 scale)}
+\title{Recode old SAT (2400 scale) to new SAT (1600 scale)}
 \usage{
 old_sat_to_new_sat_2400(x)
 }
@@ -10,8 +10,19 @@ old_sat_to_new_sat_2400(x)
 \item{x}{numeric vector of old SAT values on 2400 scale}
 }
 \value{
-integer vector of new SAT values on 2400 scale
+integer vector of new SAT values on 1600 scale
 }
 \description{
-Function to recode old SAT to new SAT (2400 Scale)
+Function to recode old SAT (2400 scale) to new SAT (1600 Scale)
+}
+\examples{
+require(dplyr)
+
+old_sat_vals <- round(sample(600:2400, 10), -1)
+new_sat_vals <- old_sat_to_new_sat_2400(old_sat_vals)
+old_new_vals <- data.frame(old_sat_vals, new_sat_vals)
+print(old_new_vals)
+
+old_new_vals \%>\%
+    mutate(new_sat_vals_piped = old_sat_to_new_sat_2400(old_sat_vals))
 }

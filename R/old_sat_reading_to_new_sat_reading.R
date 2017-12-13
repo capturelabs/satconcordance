@@ -4,6 +4,16 @@
 #'
 #' @param x numeric vector of old SAT critical reading test values
 #' @return integer vector of new SAT reading section values
+#' @examples
+#' require(dplyr)
+#'
+#' old_sat_vals <- round(sample(200:800, 10), -1)
+#' new_sat_vals <- old_sat_reading_to_new_sat_reading(old_sat_vals)
+#' old_new_vals <- data.frame(old_sat_vals, new_sat_vals)
+#' print(old_new_vals)
+#'
+#' old_new_vals %>%
+#'     mutate(new_sat_vals_piped = old_sat_reading_to_new_sat_reading(old_sat_vals))
 #' @export
 old_sat_reading_to_new_sat_reading <- function(x){
   require(dplyr)

@@ -4,6 +4,16 @@
 #'
 #' @param x numeric vector of new SAT math section values
 #' @return integer vector of old SAT math section values
+#' @examples
+#' require(dplyr)
+#'
+#' new_sat_vals <- round(sample(200:800, 10), -1)
+#' old_sat_vals <- new_sat_math_to_old_sat_math(new_sat_vals)
+#' new_old_vals <- data.frame(new_sat_vals, old_sat_vals)
+#' print(new_old_vals)
+#'
+#' new_old_vals %>%
+#'     mutate(old_sat_vals_piped = new_sat_math_to_old_sat_math(new_sat_vals))
 #' @export
 new_sat_math_to_old_sat_math <- function(x){
   require(dplyr)

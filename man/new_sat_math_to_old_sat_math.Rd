@@ -15,3 +15,14 @@ integer vector of old SAT math section values
 \description{
 Function to recode new SAT math section to old SAT math section
 }
+\examples{
+require(dplyr)
+
+new_sat_vals <- round(sample(200:800, 10), -1)
+old_sat_vals <- new_sat_math_to_old_sat_math(new_sat_vals)
+new_old_vals <- data.frame(new_sat_vals, old_sat_vals)
+print(new_old_vals)
+
+new_old_vals \%>\%
+    mutate(old_sat_vals_piped = new_sat_math_to_old_sat_math(new_sat_vals))
+}

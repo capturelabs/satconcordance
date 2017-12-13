@@ -15,3 +15,14 @@ integer vector of new SAT writing and language section values
 \description{
 Function to recode ACT Enlish/Writing test to new SAT writing and language section
 }
+\examples{
+require(dplyr)
+
+act_vals <- sample(11:36, 10)
+new_sat_vals <- act_english_to_new_sat_writing(act_vals)
+act_new_vals <- data.frame(act_vals, new_sat_vals)
+print(act_new_vals)
+
+act_new_vals \%>\%
+    mutate(new_sat_vals_piped = act_english_to_new_sat_writing(act_vals))
+}
