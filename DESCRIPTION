@@ -4,11 +4,12 @@ Title: Concordance for New and Old SAT Values
 Version: 0.1.1
 Author: Pete Barwis
 Maintainer: Pete Barwis <pbarwis@capturehighered.com>
-Description: Provides functions to recode new SAT to old SAT values,
-    old SAT to new SAT values, new SAT to ACT values, and ACT
-    to new SAT values. Functions use dplyr::recode(). Each function 
-    accepts a vector of values, recodes it, and returns the recoded
-    vector.
+Description: This package provides functions to recode SAT scores according 
+    to any table in the SAT Concordance Tables (Released 5/9/2016): this 
+    includes new SAT to old SAT values, old SAT to new SAT values, new 
+    SAT to ACT values, and ACT to new SAT values. All functions call 
+    dplyr::recode() to perform optimized recodes. Each function accepts 
+    a vector of values, recodes it, and returns the recoded vector.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
