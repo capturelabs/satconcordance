@@ -17,7 +17,6 @@
 #'     mutate(new_sat_vals_piped = old_sat_writingreading_to_new_ebrw(old_sat_vals))
 #' @export
 old_sat_writingreading_to_new_ebrw <- function(x){
-  require(dplyr)
   dplyr::recode(x,
                 `400`= 200L,
                 `410`= 210L,

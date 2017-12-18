@@ -16,7 +16,6 @@
 #'     mutate(act_vals_piped = new_sat_to_act(new_sat_vals))
 #' @export
 new_sat_to_act <- function(x){
-  require(dplyr)
   dplyr::recode(x,
                 `1600` = 36L,
                 `1590` = 35L,

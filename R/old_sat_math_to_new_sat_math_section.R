@@ -17,7 +17,6 @@
 #'     mutate(new_sat_vals_piped = old_sat_math_to_new_sat_math_section(old_sat_vals))
 #' @export
 old_sat_math_to_new_sat_math_section <- function(x){
-  require(dplyr)
   dplyr::recode(x,
                 `200` = 200L,
                 `210` = 220L,

@@ -16,7 +16,6 @@
 #' @return integer vector of new SAT values on 1600 scale
 #' @export
 old_sat_to_new_sat_2400 <- function(x){
-  require(dplyr)
   dplyr::recode(x,
                 `600` = 400L,
                 `610` = 410L,

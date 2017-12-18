@@ -16,7 +16,6 @@
 #'     mutate(new_sat_vals_piped = act_english_to_new_sat_writing(act_vals))
 #' @export
 act_english_to_new_sat_writing <- function(x){
-  require(dplyr)
   dplyr::recode(x,
                 `36` = 40L,
                 `35` = 40L,

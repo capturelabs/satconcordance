@@ -2,7 +2,7 @@
 % Please edit documentation in R/old_sat_writing_to_new_sat_writing.R
 \name{old_sat_writing_to_new_sat_writing}
 \alias{old_sat_writing_to_new_sat_writing}
-\title{Recode old SAT writing test to new SAT writing and language  section}
+\title{Recode old SAT writing test to new SAT writing and language section}
 \usage{
 old_sat_writing_to_new_sat_writing(x)
 }
