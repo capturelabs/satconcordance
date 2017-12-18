@@ -1,4 +1,4 @@
-#' Recode old SAT writing test to new SAT writing and language  section
+#' Recode old SAT writing test to new SAT writing and language section
 #'
 #' Function to recode old SAT writing test to new SAT writing and language section
 #'
