@@ -29,26 +29,139 @@ You can install satconcordance from github with:
 devtools::install_github("capturelabs/satconcordance")
 ```
 
-## Example
+## Usage
 
-This is a basic example which shows you how to recode old SAT values on a 2400 scale to new SAT values on a 1600 scale:
+#### Examples of recoding new scores to old scores:
 
 ```{r example}
 suppressMessages(require("satconcordance"))
 suppressMessages(require("dplyr"))
 
-# generate example vector
+# Recode new SAT (1600 scale) to old SAT (2400 scale)
+new_sat_vals <- round(sample(400:1600, 10), -1)
+old_sat_vals <- new_sat_to_old_sat_2400(new_sat_vals)
+new_old_vals <- data.frame(new_sat_vals, old_sat_vals)
+new_old_vals %>%
+     mutate(old_sat_vals_piped = new_sat_to_old_sat_2400(new_sat_vals))
+
+#Recode new SAT (1600 scale) to old SAT (1600 scale)
+new_sat_vals <- round(sample(400:1600, 10), -1)
+old_sat_vals <- new_sat_to_old_sat_1600(new_sat_vals)
+new_old_vals <- data.frame(new_sat_vals, old_sat_vals)
+new_old_vals %>%
+    mutate(old_sat_vals_piped = new_sat_to_old_sat_1600(new_sat_vals))
+
+# Recode new SAT math section to old SAT math section
+new_sat_vals <- round(sample(200:800, 10), -1)
+old_sat_vals <- new_sat_math_to_old_sat_math(new_sat_vals)
+new_old_vals <- data.frame(new_sat_vals, old_sat_vals)
+new_old_vals %>%
+    mutate(old_sat_vals_piped = new_sat_math_to_old_sat_math(new_sat_vals))
+
+# Recode new SAT writing and language test to old SAT writing section
+new_sat_vals <- sample(10:40, 10)
+old_sat_vals <- new_sat_writing_to_old_sat_writing(new_sat_vals)
+new_old_vals <- data.frame(new_sat_vals, old_sat_vals)
+new_old_vals %>%
+    mutate(old_sat_vals_piped = new_sat_writing_to_old_sat_writing(new_sat_vals))
+
+# Recode new SAT reading test to old SAT critical reading section
+new_sat_vals <- sample(10:40, 10)
+old_sat_vals <- new_sat_reading_to_old_sat_reading(new_sat_vals)
+new_old_vals <- data.frame(new_sat_vals, old_sat_vals)
+new_old_vals %>%
+    mutate(old_sat_vals_piped = new_sat_reading_to_old_sat_reading(new_sat_vals))
+
+# Recode new SAT EBRW section to old SAT writing plus critical reading sections
+new_sat_vals <- round(sample(200:800, 10), -1)
+old_sat_vals <- new_sat_ebrw_to_old_writingreading(new_sat_vals)
+new_old_vals <- data.frame(new_sat_vals, old_sat_vals)
+new_old_vals %>%
+    mutate(old_sat_vals_piped = new_sat_ebrw_to_old_writingreading(new_sat_vals))
+
+# Recode new SAT (1600 scale) to ACT
+new_sat_vals <- round(sample(560:1600, 10), -1)
+act_vals <- new_sat_to_act(new_sat_vals)
+new_act_vals <- data.frame(new_sat_vals, act_vals)
+new_act_vals %>%
+    mutate(act_vals_piped = new_sat_to_act(new_sat_vals))
+
+# Recode new SAT writing and language section to ACT Enlish/Writing test
+new_sat_vals <- sample(17:40, 10)
+act_vals <- new_sat_writing_to_act_english(new_sat_vals)
+new_act_vals <- data.frame(new_sat_vals, act_vals)
+new_act_vals %>%
+    mutate(act_vals_piped = new_sat_to_act(new_sat_vals))
+```
+
+
+#### Examples of recoding old scores to new scores:
+
+```{r usage}
+suppressMessages(require("satconcordance"))
+suppressMessages(require("dplyr"))
+
+# Recode old SAT (2400 scale) to new SAT (1600 scale)
 old_sat_vals <- round(sample(600:2400, 10), -1)
-
-# recode old SAT values to new SAT values
 new_sat_vals <- old_sat_to_new_sat_2400(old_sat_vals)
-
-# assemble old and new SAT values in data.frame and visually compare
 old_new_vals <- data.frame(old_sat_vals, new_sat_vals)
-print(old_new_vals)
-
-# recode old SAT values to new SAT values in dplyr::mutate() pipeline
 old_new_vals %>%
-  mutate(new_sat_vals_piped = old_sat_to_new_sat_2400(old_sat_vals))
+    mutate(new_sat_vals_piped = old_sat_to_new_sat_2400(old_sat_vals))
+
+# Recode old SAT (1600 scale) to new SAT (1600 scale)
+old_sat_vals <- round(sample(400:1600, 10), -1)
+new_sat_vals <- old_sat_to_new_sat_1600(old_sat_vals)
+old_new_vals <- data.frame(old_sat_vals, new_sat_vals)
+old_new_vals %>%
+    mutate(new_sat_vals_piped = old_sat_to_new_sat_1600(old_sat_vals))
+
+# Recode old SAT writing plus critical reading sections to new SAT EBRW section
+old_sat_vals <- round(sample(400:1600, 10), -1)
+new_sat_vals <- old_sat_writingreading_to_new_ebrw(old_sat_vals)
+old_new_vals <- data.frame(old_sat_vals, new_sat_vals)
+old_new_vals %>%
+   mutate(new_sat_vals_piped = old_sat_writingreading_to_new_ebrw(old_sat_vals))
+
+# Recode old SAT math section to new SAT math section (200-800 scale)
+old_sat_vals <- round(sample(200:800, 10), -1)
+new_sat_vals <- old_sat_math_to_new_sat_math_section(old_sat_vals)
+old_new_vals <- data.frame(old_sat_vals, new_sat_vals)
+old_new_vals %>%
+    mutate(new_sat_vals_piped = old_sat_math_to_new_sat_math_section(old_sat_vals))
+
+# Recode old SAT math section to new SAT math test (10-40 scale)
+old_sat_vals <- round(sample(200:800, 10), -1)
+new_sat_vals <- old_sat_math_to_new_sat_math_test(old_sat_vals)
+old_new_vals <- data.frame(old_sat_vals, new_sat_vals)
+old_new_vals %>%
+   mutate(new_sat_vals_piped = old_sat_math_to_new_sat_math_test(old_sat_vals))
+
+# Recode old SAT writing test to new SAT writing and language section
+old_sat_vals <- round(sample(200:800, 10), -1)
+new_sat_vals <- old_sat_writing_to_new_sat_writing(old_sat_vals)
+old_new_vals <- data.frame(old_sat_vals, new_sat_vals)
+old_new_vals %>%
+   mutate(new_sat_vals_piped = old_sat_writing_to_new_sat_writing(old_sat_vals))
+
+# Recode old SAT critical reading test to new SAT reading section
+old_sat_vals <- round(sample(200:800, 10), -1)
+new_sat_vals <- old_sat_reading_to_new_sat_reading(old_sat_vals)
+old_new_vals <- data.frame(old_sat_vals, new_sat_vals)
+old_new_vals %>%
+   mutate(new_sat_vals_piped = old_sat_reading_to_new_sat_reading(old_sat_vals))
+
+# Recode ACT to new SAT (1600 scale)
+act_vals <- sample(11:36, 10)
+new_sat_vals <- act_to_new_sat(act_vals)
+act_new_vals <- data.frame(act_vals, new_sat_vals)
+act_new_vals %>%
+   mutate(new_sat_vals_piped = act_to_new_sat(act_vals))
+
+# Recode ACT Enlish/Writing test to new SAT writing and language section
+act_vals <- sample(11:36, 10)
+new_sat_vals <- act_english_to_new_sat_writing(act_vals)
+act_new_vals <- data.frame(act_vals, new_sat_vals)
+act_new_vals %>%
+    mutate(new_sat_vals_piped = act_english_to_new_sat_writing(act_vals))
 
 ```
