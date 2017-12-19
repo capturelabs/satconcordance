@@ -4,6 +4,7 @@
 #' Missing and unmatched values are coded as missing.
 #'
 #' @param x numeric vector of old SAT values on 2400 scale
+#' @return integer vector of new SAT values on 1600 scale
 #' @examples
 #' require(dplyr)
 #'
@@ -14,7 +15,6 @@
 #'
 #' old_new_vals %>%
 #'     mutate(new_sat_vals_piped = old_sat_to_new_sat_2400(old_sat_vals))
-#' @return integer vector of new SAT values on 1600 scale
 #' @export
 old_sat_to_new_sat_2400 <- function(x){
   dplyr::recode(x,
