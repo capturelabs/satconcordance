@@ -1,4 +1,4 @@
-#' Recode ACT Enlish/Writing test to new SAT writing and language section
+#' Recode ACT English/Writing test to new SAT writing and language section
 #'
 #' Function to recode ACT English/Writing test to new SAT writing and language section.
 #' Missing and unmatched values are coded as missing.
