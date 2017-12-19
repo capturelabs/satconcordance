@@ -1,6 +1,7 @@
 #' Recode old SAT writing test to new SAT writing and language section
 #'
-#' Function to recode old SAT writing test to new SAT writing and language section
+#' Function to recode old SAT writing test to new SAT writing and language section.
+#' Missing and unmatched values are coded as missing.
 #'
 #' @param x numeric vector of old SAT writing values
 #' @return integer vector of new SAT writing and language section values

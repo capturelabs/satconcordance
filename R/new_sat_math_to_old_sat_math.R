@@ -1,6 +1,7 @@
 #' Recode new SAT math section to old SAT math section
 #'
-#' Function to recode new SAT math section to old SAT math section
+#' Function to recode new SAT math section to old SAT math section.
+#' Missing and unmatched values are coded as missing.
 #'
 #' @param x numeric vector of new SAT math section values
 #' @return integer vector of old SAT math section values

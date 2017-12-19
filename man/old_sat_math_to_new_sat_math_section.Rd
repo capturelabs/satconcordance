@@ -14,7 +14,7 @@ integer vector of new SAT math section values (200-800 scale)
 }
 \description{
 Function to recode old SAT math section to new SAT math section
-(200-800 scale)
+(200-800 scale). Missing and unmatched values are coded as missing.
 }
 \examples{
 require(dplyr)

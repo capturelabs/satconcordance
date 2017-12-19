@@ -13,7 +13,8 @@ new_sat_math_to_old_sat_math(x)
 integer vector of old SAT math section values
 }
 \description{
-Function to recode new SAT math section to old SAT math section
+Function to recode new SAT math section to old SAT math section.
+Missing and unmatched values are coded as missing.
 }
 \examples{
 require(dplyr)

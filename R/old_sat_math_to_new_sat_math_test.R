@@ -1,6 +1,7 @@
 #' Recode old SAT math section to new SAT math test (10-40 scale)
 #'
-#' Function to recode old SAT math section to new SAT math test (10-40 scale)
+#' Function to recode old SAT math section to new SAT math test (10-40 scale).
+#' Missing and unmatched values are coded as missing.
 #'
 #' @param x numeric vector of old SAT math section values
 #' @return integer vector of new SAT math test values (10-40 scale)

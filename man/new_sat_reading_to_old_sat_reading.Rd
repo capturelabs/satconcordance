@@ -13,7 +13,8 @@ new_sat_reading_to_old_sat_reading(x)
 integer vector of old SAT critical reading section values
 }
 \description{
-Function to recode new SAT reading test to old SAT critical reading section
+Function to recode new SAT reading test to old SAT critical reading section.
+Missing and unmatched values are coded as missing.
 }
 \examples{
 require(dplyr)

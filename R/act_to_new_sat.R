@@ -1,6 +1,7 @@
 #' Recode ACT to new SAT (1600 scale)
 #'
-#' Function to recode ACT to new SAT (1600 scale)
+#' Function to recode ACT to new SAT (1600 scale).
+#' Missing and unmatched values are coded as missing.
 #'
 #' @param x numeric vector of ACT values
 #' @return integer vector of new SAT values (1600 scale)

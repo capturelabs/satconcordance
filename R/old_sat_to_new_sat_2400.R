@@ -1,6 +1,7 @@
 #' Recode old SAT (2400 scale) to new SAT (1600 scale)
 #'
-#' Function to recode old SAT (2400 scale) to new SAT (1600 Scale)
+#' Function to recode old SAT (2400 scale) to new SAT (1600 Scale).
+#' Missing and unmatched values are coded as missing.
 #'
 #' @param x numeric vector of old SAT values on 2400 scale
 #' @examples

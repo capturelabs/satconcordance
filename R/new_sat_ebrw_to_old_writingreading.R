@@ -1,7 +1,8 @@
 #' Recode new SAT EBRW section to old SAT writing plus critical reading sections
 #'
 #' Function to recode new SAT Evidence-Based Reading and Writing Section test
-#' to old SAT writing plus critical reading sections
+#' to old SAT writing plus critical reading sections.
+#' Missing and unmatched values are coded as missing.
 #'
 #' @param x numeric vector of new SAT EBRW section values
 #' @return integer vector of old SAT writing plus critical reading section values

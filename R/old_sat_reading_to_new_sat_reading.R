@@ -1,6 +1,7 @@
 #' Recode old SAT critical reading test to new SAT reading section
 #'
-#' Function to recode old SAT critical reading test to new SAT reading section
+#' Function to recode old SAT critical reading test to new SAT reading section.
+#' Missing and unmatched values are coded as missing.
 #'
 #' @param x numeric vector of old SAT critical reading test values
 #' @return integer vector of new SAT reading section values

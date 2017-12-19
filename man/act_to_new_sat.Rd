@@ -13,7 +13,8 @@ act_to_new_sat(x)
 integer vector of new SAT values (1600 scale)
 }
 \description{
-Function to recode ACT to new SAT (1600 scale)
+Function to recode ACT to new SAT (1600 scale).
+Missing and unmatched values are coded as missing.
 }
 \examples{
 require(dplyr)

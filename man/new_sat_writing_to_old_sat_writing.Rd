@@ -13,7 +13,8 @@ new_sat_writing_to_old_sat_writing(x)
 integer vector of old SAT writing section values
 }
 \description{
-Function to recode new SAT writing and language test to old SAT writing section
+Function to recode new SAT writing and language test to old SAT writing section.
+Missing and unmatched values are coded as missing.
 }
 \examples{
 require(dplyr)

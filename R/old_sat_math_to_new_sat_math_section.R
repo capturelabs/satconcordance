@@ -1,7 +1,7 @@
 #' Recode old SAT math section to new SAT math section (200-800 scale)
 #'
 #' Function to recode old SAT math section to new SAT math section
-#' (200-800 scale)
+#' (200-800 scale). Missing and unmatched values are coded as missing.
 #'
 #' @param x numeric vector of old SAT math section values
 #' @return integer vector of new SAT math section values (200-800 scale)

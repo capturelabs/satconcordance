@@ -13,7 +13,8 @@ new_sat_to_old_sat_2400(x)
 integer vector of old SAT values on 2400 scale
 }
 \description{
-Function to recode new SAT (1600 scale) to old SAT (2400 Scale)
+Function to recode new SAT (1600 scale) to old SAT (2400 Scale).
+Missing and unmatched values are coded as missing.
 }
 \examples{
 require(dplyr)

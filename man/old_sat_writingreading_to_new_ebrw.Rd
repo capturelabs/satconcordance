@@ -14,7 +14,8 @@ integer vector of new SAT EBRW section values
 }
 \description{
 Function to recode old SAT writing plus critical reading sections
-to new SAT Evidence-Based Reading and Writing Section test
+to new SAT Evidence-Based Reading and Writing Section test.
+Missing and unmatched values are coded as missing.
 }
 \examples{
 require(dplyr)

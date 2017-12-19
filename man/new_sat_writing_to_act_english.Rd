@@ -13,7 +13,8 @@ new_sat_writing_to_act_english(x)
 integer vector of ACT Enlish/Writing test values
 }
 \description{
-Function to recode new SAT writing and language section to ACT Enlish/Writing test
+Function to recode new SAT writing and language section to ACT Enlish/Writing test.
+Missing and unmatched values are coded as missing.
 }
 \examples{
 require(dplyr)
