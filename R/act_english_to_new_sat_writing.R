@@ -1,6 +1,6 @@
 #' Recode ACT Enlish/Writing test to new SAT writing and language section
 #'
-#' Function to recode ACT Enlish/Writing test to new SAT writing and language section.
+#' Function to recode ACT English/Writing test to new SAT writing and language section.
 #' Missing and unmatched values are coded as missing.
 #'
 #' @param x numeric vector of ACT Enlish/Writing test values
