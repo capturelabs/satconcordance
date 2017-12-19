@@ -1,7 +1,7 @@
 Package: satconcordance
 Type: Package
 Title: Concordance for New and Old SAT Values
-Version: 0.1.1
+Version: 0.2.1
 Author: Pete Barwis
 Maintainer: Pete Barwis <pbarwis@capturehighered.com>
 Description: This package provides functions to recode SAT scores according 
