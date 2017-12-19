@@ -47,5 +47,6 @@ new_sat_writing_to_old_sat_writing <- function(x){
                 `37` = 710L,
                 `38` = 740L,
                 `39` = 760L,
-                `40` = 790L)
+                `40` = 790L,
+                .default = NA_integer_)
 }

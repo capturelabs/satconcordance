@@ -42,5 +42,6 @@ act_english_to_new_sat_writing <- function(x){
                 `14` = 21L,
                 `13` = 19L,
                 `12` = 19L,
-                `11` = 18L)
+                `11` = 18L,
+                .default = NA_integer_)
 }

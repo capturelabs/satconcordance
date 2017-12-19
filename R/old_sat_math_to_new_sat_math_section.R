@@ -78,6 +78,7 @@ old_sat_math_to_new_sat_math_section <- function(x){
                 `770` = 780L,
                 `780` = 790L,
                 `790` = 800L,
-                `800` = 800L)
+                `800` = 800L,
+                .default = NA_integer_)
 
 }

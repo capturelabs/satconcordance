@@ -77,5 +77,6 @@ old_sat_reading_to_new_sat_reading <- function(x){
                 `770` = 39L,
                 `780` = 40L,
                 `790` = 40L,
-                `800` = 40L)
+                `800` = 40L,
+                .default = NA_integer_)
 }

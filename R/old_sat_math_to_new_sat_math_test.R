@@ -77,5 +77,6 @@ old_sat_math_to_new_sat_math_test <- function(x){
                 `770` = 39,
                 `780` = 39.5,
                 `790` = 40,
-                `800` = 40)
+                `800` = 40,
+                .default = NA_real_)
 }

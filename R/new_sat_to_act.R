@@ -121,5 +121,6 @@ new_sat_to_act <- function(x){
                 `590` = 11L,
                 `580` = 11L,
                 `570` = 11L,
-                `560` = 11L)
+                `560` = 11L,
+                .default = NA_integer_)
 }

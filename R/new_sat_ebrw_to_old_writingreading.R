@@ -78,5 +78,6 @@ new_sat_ebrw_to_old_writingreading <- function(x){
                 `770` = 1510L,
                 `780` = 1540L,
                 `790` = 1560L,
-                `800` = 1590L)
+                `800` = 1590L,
+                .default = NA_integer_)
 }

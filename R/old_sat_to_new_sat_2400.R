@@ -197,5 +197,6 @@ old_sat_to_new_sat_2400 <- function(x){
                 `2370` = 1590L,
                 `2380` = 1590L,
                 `2390` = 1600L,
-                `2400` = 1600L)
+                `2400` = 1600L,
+                .default = NA_integer_)
 }

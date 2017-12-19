@@ -42,5 +42,6 @@ act_to_new_sat <- function(x){
                 `14` = 780L,
                 `13` = 740L,
                 `12` = 680L,
-                `11` = 590L)
+                `11` = 590L,
+                .default = NA_integer_)
 }
