@@ -14,11 +14,11 @@ knitr::opts_chunk$set(
 
 # satconcordance
 
-The goal of satconcordance is to make it easy to recode a column of SAT scores into new or old, SAT or ACT scores.
+The goal of satconcordance is to make it easy to recode a column of SAT® scores into new or old, SAT® or ACT® scores.
 
 ## Overview
 
-This package provides functions to recode SAT© scores according to any table in the SAT© Concordance Tables (Released 5/9/2016): this includes new SAT© to old SAT© values, old SAT© to new SAT© values, new SAT© to ACT© values, and ACT© to new SAT© values. All functions call dplyr::recode() to perform optimized recodes. Each function accepts a vector of values, recodes it, and returns the recoded vector. Missing and unmatched values are coded as missing.
+This package provides functions to recode SAT® scores according to any table in the SAT® Concordance Tables (Released 5/9/2016): this includes new SAT® to old SAT® values, old SAT® to new SAT® values, new SAT® to ACT® values, and ACT® to new SAT® values. All functions call dplyr::recode() to perform optimized recodes. Each function accepts a vector of values, recodes it, and returns the recoded vector. Missing and unmatched values are coded as missing.
 
 ## Disclaimers
 SAT® is a trademark registered by the College Board, which is not affiliated with, and does not endorse, this website or code base.

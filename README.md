@@ -3,17 +3,17 @@
 satconcordance
 ==============
 
-The goal of satconcordance is to make it easy to recode a column of SAT scores into new or old, SAT or ACT scores.
+The goal of satconcordance is to make it easy to recode a column of SAT® scores into new or old, SAT® or ACT® scores.
 
 Overview
 --------
 
-This package provides functions to recode SAT© scores according to any table in the SAT© Concordance Tables (Released 5/9/2016): this includes new SAT© to old SAT© values, old SAT© to new SAT© values, new SAT© to ACT© values, and ACT© to new SAT© values. All functions call dplyr::recode() to perform optimized recodes. Each function accepts a vector of values, recodes it, and returns the recoded vector. Missing and unmatched values are coded as missing.
+This package provides functions to recode SAT® scores according to any table in the SAT® Concordance Tables (Released 5/9/2016): this includes new SAT® to old SAT® values, old SAT® to new SAT® values, new SAT® to ACT® values, and ACT® to new SAT® values. All functions call dplyr::recode() to perform optimized recodes. Each function accepts a vector of values, recodes it, and returns the recoded vector. Missing and unmatched values are coded as missing.
 
 Disclaimers
 -----------
 
-SAT® is a trademark registered by the College Board, which is not affiliated with, and does not endorse, this website or code base. ACT@ is a trademark registered by the ACT, which is not affiliated with, and does not endorse, this website or code base.
+SAT® is a trademark registered by the College Board, which is not affiliated with, and does not endorse, this website or code base. ACT® is a trademark registered by the ACT, which is not affiliated with, and does not endorse, this website or code base.
 
 Installation
 ------------
@@ -41,16 +41,16 @@ new_old_vals <- data.frame(new_sat_vals, old_sat_vals)
 new_old_vals %>%
      mutate(old_sat_vals_piped = new_sat_to_old_sat_2400(new_sat_vals))
 #>    new_sat_vals old_sat_vals old_sat_vals_piped
-#> 1          1530         2230               2230
-#> 2          1580         2350               2350
-#> 3          1330         1870               1870
-#> 4           710          910                910
-#> 5          1550         2280               2280
-#> 6          1010         1370               1370
-#> 7           950         1280               1280
-#> 8          1100         1510               1510
-#> 9           620          810                810
-#> 10         1100         1510               1510
+#> 1           490          690                690
+#> 2          1600         2390               2390
+#> 3          1040         1420               1420
+#> 4          1450         2080               2080
+#> 5          1500         2170               2170
+#> 6          1230         1710               1710
+#> 7          1070         1460               1460
+#> 8          1030         1400               1400
+#> 9           880         1180               1180
+#> 10          490          690                690
 
 # Recode new SAT (1600 scale) to old SAT (1600 scale)
 new_sat_vals <- round(sample(400:1600, 10), -1)
@@ -59,16 +59,16 @@ new_old_vals <- data.frame(new_sat_vals, old_sat_vals)
 new_old_vals %>%
     mutate(old_sat_vals_piped = new_sat_to_old_sat_1600(new_sat_vals))
 #>    new_sat_vals old_sat_vals old_sat_vals_piped
-#> 1          1400         1340               1340
-#> 2           610          540                540
-#> 3           590          530                530
-#> 4          1390         1330               1330
-#> 5          1180         1110               1110
-#> 6           730          630                630
-#> 7          1470         1420               1420
-#> 8          1080         1000               1000
-#> 9          1590         1580               1580
-#> 10         1230         1160               1160
+#> 1          1130         1060               1060
+#> 2          1040          960                960
+#> 3          1140         1070               1070
+#> 4           400          400                400
+#> 5           950          870                870
+#> 6          1060          980                980
+#> 7           440          430                430
+#> 8          1580         1570               1570
+#> 9          1500         1460               1460
+#> 10          440          430                430
 
 # Recode new SAT math section to old SAT math section
 new_sat_vals <- round(sample(200:800, 10), -1)
@@ -77,16 +77,16 @@ new_old_vals <- data.frame(new_sat_vals, old_sat_vals)
 new_old_vals %>%
     mutate(old_sat_vals_piped = new_sat_math_to_old_sat_math(new_sat_vals))
 #>    new_sat_vals old_sat_vals old_sat_vals_piped
-#> 1           710          680                680
-#> 2           210          200                200
-#> 3           480          440                440
-#> 4           760          740                740
-#> 5           450          410                410
-#> 6           390          350                350
+#> 1           210          200                200
+#> 2           580          560                560
+#> 3           400          360                360
+#> 4           610          590                590
+#> 5           790          780                780
+#> 6           650          630                630
 #> 7           400          360                360
-#> 8           620          600                600
-#> 9           510          470                470
-#> 10          260          240                240
+#> 8           740          710                710
+#> 9           210          200                200
+#> 10          270          240                240
 
 # Recode new SAT writing and language test to old SAT writing section
 new_sat_vals <- sample(10:40, 10)
@@ -95,16 +95,16 @@ new_old_vals <- data.frame(new_sat_vals, old_sat_vals)
 new_old_vals %>%
     mutate(old_sat_vals_piped = new_sat_writing_to_old_sat_writing(new_sat_vals))
 #>    new_sat_vals old_sat_vals old_sat_vals_piped
-#> 1            30          530                530
-#> 2            16          280                280
-#> 3            28          490                490
-#> 4            17          300                300
-#> 5            33          600                600
-#> 6            20          350                350
-#> 7            21          370                370
-#> 8            32          570                570
-#> 9            24          420                420
-#> 10           31          550                550
+#> 1            25          430                430
+#> 2            20          350                350
+#> 3            39          760                760
+#> 4            27          470                470
+#> 5            19          340                340
+#> 6            26          450                450
+#> 7            12          230                230
+#> 8            23          400                400
+#> 9            36          680                680
+#> 10           34          630                630
 
 # Recode new SAT reading test to old SAT critical reading section
 new_sat_vals <- sample(10:40, 10)
@@ -113,16 +113,16 @@ new_old_vals <- data.frame(new_sat_vals, old_sat_vals)
 new_old_vals %>%
     mutate(old_sat_vals_piped = new_sat_reading_to_old_sat_reading(new_sat_vals))
 #>    new_sat_vals old_sat_vals old_sat_vals_piped
-#> 1            14          250                250
-#> 2            20          370                370
-#> 3            33          610                610
-#> 4            21          380                380
-#> 5            31          570                570
-#> 6            13          240                240
-#> 7            16          270                270
-#> 8            18          310                310
-#> 9            10          200                200
-#> 10           24          440                440
+#> 1            22          400                400
+#> 2            15          260                260
+#> 3            19          340                340
+#> 4            31          570                570
+#> 5            21          380                380
+#> 6            10          200                200
+#> 7            17          280                280
+#> 8            28          520                520
+#> 9            40          790                790
+#> 10           38          720                720
 
 # Recode new SAT EBRW section to old SAT writing plus critical reading sections
 new_sat_vals <- round(sample(200:800, 10), -1)
@@ -131,16 +131,16 @@ new_old_vals <- data.frame(new_sat_vals, old_sat_vals)
 new_old_vals %>%
     mutate(old_sat_vals_piped = new_sat_ebrw_to_old_writingreading(new_sat_vals))
 #>    new_sat_vals old_sat_vals old_sat_vals_piped
-#> 1           270          460                460
-#> 2           280          470                470
-#> 3           730         1390               1390
-#> 4           400          710                710
+#> 1           440          790                790
+#> 2           800         1590               1590
+#> 3           430          770                770
+#> 4           430          770                770
 #> 5           780         1540               1540
-#> 6           520          930                930
-#> 7           510          910                910
-#> 8           300          490                490
-#> 9           370          640                640
-#> 10          800         1590               1590
+#> 6           720         1370               1370
+#> 7           770         1510               1510
+#> 8           240          440                440
+#> 9           620         1120               1120
+#> 10          260          450                450
 
 # Recode new SAT (1600 scale) to ACT
 new_sat_vals <- round(sample(560:1600, 10), -1)
@@ -149,16 +149,16 @@ new_act_vals <- data.frame(new_sat_vals, act_vals)
 new_act_vals %>%
     mutate(act_vals_piped = new_sat_to_act(new_sat_vals))
 #>    new_sat_vals act_vals act_vals_piped
-#> 1          1180       24             24
-#> 2          1310       28             28
-#> 3          1270       26             26
-#> 4           950       18             18
-#> 5           880       16             16
-#> 6           770       14             14
-#> 7          1020       20             20
-#> 8           820       15             15
-#> 9          1100       22             22
-#> 10         1370       29             29
+#> 1          1080       21             21
+#> 2           960       18             18
+#> 3          1370       29             29
+#> 4          1260       26             26
+#> 5          1300       27             27
+#> 6          1370       29             29
+#> 7          1300       27             27
+#> 8          1510       33             33
+#> 9           980       19             19
+#> 10          990       19             19
 
 # Recode new SAT writing and language section to ACT Enlish/Writing test
 new_sat_vals <- sample(17:40, 10)
@@ -167,16 +167,16 @@ new_act_vals <- data.frame(new_sat_vals, act_vals)
 new_act_vals %>%
     mutate(act_vals_piped = new_sat_to_act(new_sat_vals))
 #>    new_sat_vals act_vals act_vals_piped
-#> 1            22       15             NA
-#> 2            18       12             NA
-#> 3            34       28             NA
-#> 4            30       23             NA
+#> 1            32       25             NA
+#> 2            19       13             NA
+#> 3            17       11             NA
+#> 4            26       19             NA
 #> 5            37       32             NA
-#> 6            40       34             NA
+#> 6            31       24             NA
 #> 7            25       18             NA
-#> 8            35       29             NA
-#> 9            23       16             NA
-#> 10           38       33             NA
+#> 8            20       13             NA
+#> 9            27       20             NA
+#> 10           33       26             NA
 ```
 
 #### Examples of recoding old scores to new scores:
@@ -192,16 +192,16 @@ old_new_vals <- data.frame(old_sat_vals, new_sat_vals)
 old_new_vals %>%
     mutate(new_sat_vals_piped = old_sat_to_new_sat_2400(old_sat_vals))
 #>    old_sat_vals new_sat_vals new_sat_vals_piped
-#> 1          1120          840                840
-#> 2          2290         1550               1550
-#> 3          2190         1510               1510
-#> 4          1630         1180               1180
-#> 5          1700         1220               1220
-#> 6           760          560                560
-#> 7           800          610                610
-#> 8          1770         1270               1270
-#> 9          2230         1530               1530
-#> 10         1990         1400               1400
+#> 1          2070         1450               1450
+#> 2          1700         1220               1220
+#> 3          1860         1320               1320
+#> 4          2090         1460               1460
+#> 5          1210          900                900
+#> 6           960          740                740
+#> 7          1160          870                870
+#> 8           600          400                400
+#> 9           790          600                600
+#> 10         1090          820                820
 
 # Recode old SAT (1600 scale) to new SAT (1600 scale)
 old_sat_vals <- round(sample(400:1600, 10), -1)
@@ -210,16 +210,16 @@ old_new_vals <- data.frame(old_sat_vals, new_sat_vals)
 old_new_vals %>%
     mutate(new_sat_vals_piped = old_sat_to_new_sat_1600(old_sat_vals))
 #>    old_sat_vals new_sat_vals new_sat_vals_piped
-#> 1           710          800                800
-#> 2          1600         1600               1600
-#> 3          1550         1560               1560
-#> 4          1210         1280               1280
-#> 5           810          890                890
-#> 6          1380         1430               1430
-#> 7          1360         1420               1420
-#> 8          1140         1210               1210
+#> 1           430          450                450
+#> 2          1510         1540               1540
+#> 3           880          960                960
+#> 4           480          520                520
+#> 5           420          430                430
+#> 6           820          900                900
+#> 7           750          840                840
+#> 8           630          730                730
 #> 9          1380         1430               1430
-#> 10          550          620                620
+#> 10         1460         1500               1500
 
 # Recode old SAT writing plus critical reading sections to new SAT EBRW section
 old_sat_vals <- round(sample(400:1600, 10), -1)
@@ -228,16 +228,16 @@ old_new_vals <- data.frame(old_sat_vals, new_sat_vals)
 old_new_vals %>%
    mutate(new_sat_vals_piped = old_sat_writingreading_to_new_ebrw(old_sat_vals))
 #>    old_sat_vals new_sat_vals new_sat_vals_piped
-#> 1          1160          640                640
-#> 2          1510          770                770
-#> 3          1340          710                710
-#> 4           480          290                290
-#> 5          1530          780                780
-#> 6           980          550                550
-#> 7           890          500                500
-#> 8           780          440                440
-#> 9          1560          790                790
-#> 10          890          500                500
+#> 1           920          510                510
+#> 2          1010          560                560
+#> 3          1450          750                750
+#> 4           450          260                260
+#> 5           460          270                270
+#> 6           800          450                450
+#> 7          1120          620                620
+#> 8          1080          600                600
+#> 9          1130          620                620
+#> 10         1190          650                650
 
 # Recode old SAT math section to new SAT math section (200-800 scale)
 old_sat_vals <- round(sample(200:800, 10), -1)
@@ -246,16 +246,16 @@ old_new_vals <- data.frame(old_sat_vals, new_sat_vals)
 old_new_vals %>%
     mutate(new_sat_vals_piped = old_sat_math_to_new_sat_math_section(old_sat_vals))
 #>    old_sat_vals new_sat_vals new_sat_vals_piped
-#> 1           400          440                440
-#> 2           600          620                620
-#> 3           400          440                440
-#> 4           720          750                750
-#> 5           670          700                700
-#> 6           700          730                730
-#> 7           560          580                580
-#> 8           510          540                540
-#> 9           430          470                470
-#> 10          490          520                520
+#> 1           430          470                470
+#> 2           610          630                630
+#> 3           390          430                430
+#> 4           610          630                630
+#> 5           660          690                690
+#> 6           250          280                280
+#> 7           740          760                760
+#> 8           720          750                750
+#> 9           590          610                610
+#> 10          760          780                780
 
 # Recode old SAT math section to new SAT math test (10-40 scale)
 old_sat_vals <- round(sample(200:800, 10), -1)
@@ -264,16 +264,16 @@ old_new_vals <- data.frame(old_sat_vals, new_sat_vals)
 old_new_vals %>%
    mutate(new_sat_vals_piped = old_sat_math_to_new_sat_math_test(old_sat_vals))
 #>    old_sat_vals new_sat_vals new_sat_vals_piped
-#> 1           780         39.5               39.5
-#> 2           790         40.0               40.0
-#> 3           650         33.5               33.5
-#> 4           320         18.0               18.0
-#> 5           710         37.0               37.0
-#> 6           780         39.5               39.5
-#> 7           660         34.5               34.5
-#> 8           490         26.0               26.0
-#> 9           340         19.0               19.0
-#> 10          590         30.5               30.5
+#> 1           530         28.0               28.0
+#> 2           680         35.5               35.5
+#> 3           450         24.5               24.5
+#> 4           250         14.0               14.0
+#> 5           240         13.0               13.0
+#> 6           300         17.5               17.5
+#> 7           780         39.5               39.5
+#> 8           720         37.5               37.5
+#> 9           270         15.5               15.5
+#> 10          530         28.0               28.0
 
 # Recode old SAT writing test to new SAT writing and language section
 old_sat_vals <- round(sample(200:800, 10), -1)
@@ -282,16 +282,16 @@ old_new_vals <- data.frame(old_sat_vals, new_sat_vals)
 old_new_vals %>%
    mutate(new_sat_vals_piped = old_sat_writing_to_new_sat_writing(old_sat_vals))
 #>    old_sat_vals new_sat_vals new_sat_vals_piped
-#> 1           520           29                 29
-#> 2           720           37                 37
-#> 3           790           40                 40
-#> 4           250           14                 14
-#> 5           550           31                 31
-#> 6           480           28                 28
-#> 7           740           38                 38
-#> 8           770           39                 39
-#> 9           560           31                 31
-#> 10          380           22                 22
+#> 1           490           28                 28
+#> 2           560           31                 31
+#> 3           280           16                 16
+#> 4           780           40                 40
+#> 5           300           17                 17
+#> 6           700           37                 37
+#> 7           360           21                 21
+#> 8           620           34                 34
+#> 9           510           29                 29
+#> 10          260           14                 14
 
 # Recode old SAT critical reading test to new SAT reading section
 old_sat_vals <- round(sample(200:800, 10), -1)
@@ -300,16 +300,16 @@ old_new_vals <- data.frame(old_sat_vals, new_sat_vals)
 old_new_vals %>%
    mutate(new_sat_vals_piped = old_sat_reading_to_new_sat_reading(old_sat_vals))
 #>    old_sat_vals new_sat_vals new_sat_vals_piped
-#> 1           670           36                 36
-#> 2           480           26                 26
-#> 3           770           39                 39
-#> 4           240           13                 13
-#> 5           340           19                 19
-#> 6           490           27                 27
-#> 7           200           10                 10
-#> 8           540           29                 29
-#> 9           490           27                 27
-#> 10          700           37                 37
+#> 1           310           18                 18
+#> 2           570           31                 31
+#> 3           580           31                 31
+#> 4           260           15                 15
+#> 5           630           34                 34
+#> 6           610           33                 33
+#> 7           400           22                 22
+#> 8           590           32                 32
+#> 9           600           32                 32
+#> 10          640           34                 34
 
 # Recode ACT to new SAT (1600 scale)
 act_vals <- sample(11:36, 10)
@@ -318,16 +318,16 @@ act_new_vals <- data.frame(act_vals, new_sat_vals)
 act_new_vals %>%
    mutate(new_sat_vals_piped = act_to_new_sat(act_vals))
 #>    act_vals new_sat_vals new_sat_vals_piped
-#> 1        36         1600               1600
-#> 2        35         1570               1570
-#> 3        18          950                950
-#> 4        30         1400               1400
-#> 5        13          740                740
-#> 6        16          870                870
-#> 7        23         1140               1140
-#> 8        25         1220               1220
-#> 9        19          990                990
-#> 10       21         1070               1070
+#> 1        29         1360               1360
+#> 2        13          740                740
+#> 3        16          870                870
+#> 4        23         1140               1140
+#> 5        31         1430               1430
+#> 6        33         1500               1500
+#> 7        35         1570               1570
+#> 8        36         1600               1600
+#> 9        26         1260               1260
+#> 10       32         1470               1470
 
 # Recode ACT Enlish/Writing test to new SAT writing and language section
 act_vals <- sample(11:36, 10)
@@ -336,14 +336,14 @@ act_new_vals <- data.frame(act_vals, new_sat_vals)
 act_new_vals %>%
     mutate(new_sat_vals_piped = act_english_to_new_sat_writing(act_vals))
 #>    act_vals new_sat_vals new_sat_vals_piped
-#> 1        19           26                 26
-#> 2        28           34                 34
-#> 3        15           22                 22
-#> 4        34           39                 39
-#> 5        24           31                 31
-#> 6        23           30                 30
-#> 7        18           25                 25
-#> 8        35           40                 40
-#> 9        30           36                 36
-#> 10       36           40                 40
+#> 1        12           19                 19
+#> 2        29           35                 35
+#> 3        23           30                 30
+#> 4        31           36                 36
+#> 5        33           38                 38
+#> 6        16           23                 23
+#> 7        22           29                 29
+#> 8        15           22                 22
+#> 9        32           37                 37
+#> 10       28           34                 34
 ```
