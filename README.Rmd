@@ -18,7 +18,11 @@ The goal of satconcordance is to make it easy to recode a column of SAT scores i
 
 ## Overview
 
-This package provides functions to recode SAT scores according to any table in the SAT Concordance Tables (Released 5/9/2016): this includes new SAT to old SAT values, old SAT to new SAT values, new SAT to ACT values, and ACT to new SAT values. All functions call dplyr::recode() to perform optimized recodes. Each function accepts a vector of values, recodes it, and returns the recoded vector. Missing and unmatched values are coded as missing.
+This package provides functions to recode SAT© scores according to any table in the SAT© Concordance Tables (Released 5/9/2016): this includes new SAT© to old SAT© values, old SAT© to new SAT© values, new SAT© to ACT© values, and ACT© to new SAT© values. All functions call dplyr::recode() to perform optimized recodes. Each function accepts a vector of values, recodes it, and returns the recoded vector. Missing and unmatched values are coded as missing.
+
+## Disclaimers
+SAT® is a trademark registered by the College Board, which is not affiliated with, and does not endorse, this website or code base.
+ACT@ is a trademark registered by the ACT, which is not affiliated with, and does not endorse, this website or code base.
 
 ## Installation
 
@@ -165,3 +169,4 @@ act_new_vals %>%
     mutate(new_sat_vals_piped = act_english_to_new_sat_writing(act_vals))
 
 ```
+
