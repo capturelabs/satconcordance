@@ -22,7 +22,7 @@ You can install satconcordance from github with:
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("capturelabs/satconcordance")
+devtools::install_github("alberto-guzman/satconcordance")
 ```
 
 Usage
